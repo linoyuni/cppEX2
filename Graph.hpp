@@ -7,6 +7,7 @@
 
 namespace ariel
 {
+    
     class Graph
     {
         private: 
@@ -30,22 +31,25 @@ namespace ariel
             Graph &operator-();
 
             bool operator==(const Graph &) const;
-            bool operator!=(const Graph & other)  const {return !(*this == other);};
+            bool operator!=(const Graph & other) const;
             bool operator>(const Graph &)  const;
-            bool operator<(const Graph &other) const {return other == *this;};
-            bool operator>=(const Graph & other) const {return (*this > other) || (*this == other);};
-            bool operator<=(const Graph & other) const {return (*this < other) || (*this == other);};;
+            bool operator<(const Graph &other) const;
+            bool operator>=(const Graph & other) const;
+            bool operator<=(const Graph & other) const;
 
             Graph operator++();
             Graph operator--();
             Graph operator++(int);
             Graph operator--(int);
             Graph operator*=(int n);
+            Graph operator*=(const Graph& g);
             Graph operator*(const Graph& g) const;
+            Graph operator*(int scalar) const;
             Graph operator/=(int n);
-            Graph operator/(int n const;
+            Graph operator/(int n) const;
 
-            friend std::ostream &operator<<(std::ostream &os, const Graph &g);
+            friend std::ostream &operator<<(std::ostream &os, Graph &g);
+            
     };
 }
 
